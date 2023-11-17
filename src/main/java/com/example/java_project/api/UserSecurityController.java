@@ -29,6 +29,11 @@ public class UserSecurityController {
         return "Hello User, Welcome!!";
     }
 
+    @PostMapping("/{user}")
+    public String hello(@PathVariable String user) {
+        return "Hello, "+user+" , Welcome!!";
+    }
+
 //    @PostMapping("/authenticate")
 //    public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
 //        try {

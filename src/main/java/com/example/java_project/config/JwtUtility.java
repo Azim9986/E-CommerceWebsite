@@ -15,15 +15,15 @@ public class JwtUtility {
 
     private static final String SECRET_CODE = "secret165416fdsfskjfhr5bhidfbidshf4665465gdfsj5";
 
-    private boolean isTokenExpired(String token) {
+    public boolean isTokenExpired(String token) {
         return (extractExpiration(token).before(new Date()));
     }
 
-    private Date extractExpiration(String token) {
+    public Date extractExpiration(String token) {
         return extractClaim(token, Claims::getExpiration);
     }
 
-    private String extractUsername(String token) {
+    public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
     }
 
